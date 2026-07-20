@@ -1,7 +1,7 @@
 # ===========================
 # Build Stage
 # ===========================
-FROM maven:3.9.9-eclipse-temurin-25 AS builder
+FROM maven:3.9.9-eclipse-temurin-21 AS builder
 
 WORKDIR /app
 
@@ -16,7 +16,7 @@ RUN ./mvnw clean package -DskipTests
 # ===========================
 # Runtime Stage
 # ===========================
-FROM eclipse-temurin:25-jre
+FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
